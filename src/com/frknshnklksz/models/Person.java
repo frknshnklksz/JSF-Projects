@@ -17,7 +17,7 @@ public class Person {
 	}
 	
 	
-	public String getSurName() {
+	public String getSurName() { 
 		return surName;
 	}
 	public int getId() {
