@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+<h:head>
+	<title>Form Ekranı</title>
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+		crossorigin="anonymous" />
+</h:head>
+
+<h:body>
+
+	<h:form>
+		<div class="container">
+			<div class="row shadow p-3 mb-5 bg-white rounded">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
+					<div class="form-group">
+						<label>NAME</label>
+						<h:inputText class="form-control"
+							placeHolder="pleace enter your e mail adress"
+							value="#{indexBean.name}"></h:inputText>
+					</div>
+
+					<div class="form-group">
+						<label>SURNMAE</label>
+						<h:inputText class="form-control"
+							placeHolder="pleace enter your e mail adress"
+							value="#{indexBean.surName}"></h:inputText>
+					</div>
+
+					<div class="form-group">
+						<label>EMAIL</label>
+						<h:inputText class="form-control"
+							placeHolder="pleace enter your e mail adress"
+							value="#{indexBean.eMail}"></h:inputText>
+					</div>
+				</div>
+				<div class="col-md-2"></div>
+			</div>
+
+			<h:commandButton action="#{indexBean.clickButtonForAddInTable}"
+				class="btn btn-danger btn-lg btn-block" value="ADD PERSON IN TABLE">
+			</h:commandButton>
+
+
+			<div class="row shadow p-3 mb-5 bg-white rounded">
+				<table class="table table-hover table-dark">
+					<thead>
+						<tr>
+							<th scope="col">ID</th>
+							<th scope="col">NAME</th>
+							<th scope="col">SURNAME</th>
+							<th scope="col">EMAIL</th>
+						</tr>
+					</thead>
+					<tbody>
+						<ui:repeat var="item" value="#{indexBean.personList}">
+							<tr>
+								<th scope="row">${item.id}</th>
+								<td>#{item.name}</td>
+								<td>#{item.surName}</td>
+								<td>#{item.eMail}</td>
+							</tr>
+						</ui:repeat>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+	</h:form>
+
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+		crossorigin="anonymous"></script>
+</h:body>
+
+
+</html>
